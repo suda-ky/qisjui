@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://java.sun.com/xml/ns/javaee" xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-app_3_0.xsd" id="WebApp_ID" version="3.0">
+  <display-name>Work</display-name>
+  <servlet>
+    <servlet-name>Login</servlet-name>
+    <servlet-class>controller.Login</servlet-class>
+  </servlet>
+  <servlet>
+    <servlet-name>CreateVerfifyCodeImageServlet</servlet-name>
+    <servlet-class>controller.CreateVerfifyCodeImageServlet</servlet-class>
+  </servlet>
+  <servlet>
+    <servlet-name>DownLoadController</servlet-name>
+    <servlet-class>controller.DownLoadController</servlet-class>
+  </servlet>
+  <servlet>
+    <description>Delstudent</description>
+    <display-name>Delstudent</display-name>
+    <servlet-name>MainController</servlet-name>
+    <servlet-class>controller.MainController</servlet-class>
+  </servlet>
+
+  
+  <servlet-mapping>
+    <servlet-name>Login</servlet-name>
+    <url-pattern>/Login.do</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>CreateVerfifyCodeImageServlet</servlet-name>
+    <url-pattern>/CreateVerfifyCodeImageServlet.do</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>DownLoadController</servlet-name>
+    <url-pattern>/DownLoadController.do</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>MainController</servlet-name>
+    <url-pattern>/MainController.do</url-pattern>
+  </servlet-mapping>
+  
+ <filter>
+<filter-name>PerFilter</filter-name>
+<filter-class>Filter.PerFilter</filter-class>
+<init-param>
+<param-name>notCheckUrl</param-name>
+<param-value>/Login.do,/error.jsp,/CreateVerfifyCodeImageServlet.do,/DownLoadController.do,/MainController.do</param-value>
+</init-param>
+</filter>
+
+<filter-mapping>
+<filter-name>PerFilter</filter-name>
+
+<url-pattern>*.jsp</url-pattern>
+<url-pattern>*.do</url-pattern>
+</filter-mapping>
+  
+  <filter>
+<filter-name>AutoLoginFilter</filter-name>
+<filter-class>Filter.AutoLoginFilter</filter-class>
+</filter>
+  <filter-mapping>
+<filter-name>AutoLoginFilter</filter-name>
+<url-pattern>*.html</url-pattern>
+</filter-mapping>
+  <welcome-file-list>
+    <welcome-file>index.html</welcome-file>
+    <welcome-file>index.htm</welcome-file>
+    <welcome-file>index.jsp</welcome-file>
+    <welcome-file>default.html</welcome-file>
+    <welcome-file>default.htm</welcome-file>
+    <welcome-file>default.jsp</welcome-file>
+  </welcome-file-list>
+</web-app>
