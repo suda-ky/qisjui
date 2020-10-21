@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8"/>
+		<title>登录</title>
+		
+		<script type="text/javascript">
+			function changecode(){
+				var codeImg = document.getElementById("imgId");
+				
+				codeImg.src = "CreateVerfifyCodeImageServlet.do?t="+Math.random();
+			}
+			//提交做验证
+			function check() {
+			/*	var name = document.getElementById("uname");
+				var pwd = document.getElementById("pwd");
+				var verity = document.getElementById("vId");
+				
+				if(name.value == ''||name.value == null){
+					window.alert("请输入用户名！");
+					return false;
+				}else{
+					if(pwd.value == ''||pwd.value == null){
+						window.alert("请输入密码！");
+						return false;
+					}else{
+						if(verity.value == ''||verity.value == null){
+							window.alert("请输入验证码！");
+							return false;
+						}else{
+							return true;
+						}
+					}
+				}*/
+				//console.log(pwd.value);
+				return true;
+				}
+		</script>
+		<style>
+			body{
+				background-image: url(img/bg2.jpg);
+				background-repeat: no-repeat;
+				background-size: cover;/* 自适应窗口，会把图片拉伸足够大，但是部分图片会显示不全 */
+			}
+			#logDiv{
+				margin: auto;
+				position: absolute;
+				top: 0;
+				left: 0;
+				right: 0;
+				bottom: 0;
+				/* border: 1px solid red; */
+				border-radius: 20px;
+				background: #fffae8;
+				width: 350px;
+				height: 300px;
+				text-align: center;
+				
+			}
+			#formId{
+				/* border: 1px solid red; */
+				margin-top: 60px;
+			}
+			#uname{
+				width: 200px;
+				height: 25px;
+				border-radius: 4px;
+				border:1px solid gray;
+				background: url(img/name.png)4px no-repeat;/* 插入图片不平铺 */
+				text-indent: 2em;/* 不让文字顶格输入 */
+			}
+			#pwd{
+				width: 200px;
+				height: 25px;
+				border-radius: 4px;
+				border:1px solid gray;
+				background: url(img/pwd.png)4px no-repeat;/* 插入图片不平铺 */
+				text-indent: 2em;/* 不让文字顶格输入 */
+			}
+			#vId{
+				width: 90px;
+				height: 25px;
+				border-radius: 4px;
+				border:1px solid gray;
+				background: url(./img/vid.png)4px no-repeat;/* 插入图片不平铺 */
+				text-indent: 2em;/* 不让文字顶格输入 */
+			}
+		</style>
+	</head>
+	<body>
+	<div id="logDiv">
+		<form action="Login.do" id="formId" method="post" onsubmit="return check()">
+			<p><input type="text" name="username" id="uname" placeholder="用户名"/></p>
+			<p ><input type="password" name="password" id="pwd" placeholder="密码"/></p>
+			<p><input type="tel" name="vimage" id="vId" placeholder="验证码"/>
+			<img src="CreateVerfifyCodeImageServlet.do" onclick="changecode()" style="cursor: pointer;vertical-align: middle;" title="看不清，下一张" id="imgId"/>
+			</p>
+			<input type="checkbox" name="sevenAutoLogin" value="ok"/>七天免登录
+			<p><button type="submit" style="width: 200px;height: 40px;font-size: 18px;color:white;background-color: #8BCC32;border: chartreuse;">立即登录</button></p>
+		</form>
+	</div>
+	</body>
+</html>

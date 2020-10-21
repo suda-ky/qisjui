@@ -1,0 +1,16 @@
+eclipse.preferences.version=1
+encoding//WebRoot/login.html=UTF-8
+encoding//src/Filter/AutoLoginFilter.java=UTF-8
+encoding//src/Filter/PerFilter.java=UTF-8
+encoding//src/controller/CreateVerfifyCodeImageServlet.java=UTF-8
+encoding//src/controller/DownLoadController.java=UTF-8
+encoding//src/controller/EmailAjax.java=UTF-8
+encoding//src/controller/Login.java=UTF-8
+encoding//src/controller/MainController.java=UTF-8
+encoding//src/controller/NameAjax.java=UTF-8
+encoding//src/controller/ProvinceCityAjax.java=UTF-8
+encoding//src/controller/RegisterController.java=UTF-8
+encoding//src/entity/CreateVerificationCodeImage.java=UTF-8
+encoding//src/entity/DownloadList.java=UTF-8
+encoding//src/entity/User.java=UTF-8
+encoding//src/util/DButil.java=UTF-8
