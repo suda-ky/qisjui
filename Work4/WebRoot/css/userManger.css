@@ -1,0 +1,215 @@
+body{
+	margin: 0;
+	padding: 0;
+	background: url(../img/bg2.jpg) no-repeat;
+	background-size: cover;
+}
+#div_table{
+	/*border: 1px red solid;*/
+	width: 1000px;
+	margin: 0 auto;
+	height: 500px;
+}
+/* 头部div */
+#div_header{
+	/*border: 1px red solid;*/
+	width: 980px;
+	height: 50px;
+	margin-top: 20px;
+	margin-left: 10px;
+}
+/* 输入框的div */
+#form_search{
+	/* border: 1px red solid; */
+	width: 550px;
+	margin-top: 10px;
+	margin-left: 10px;
+}
+#form_search input{
+	width: 120px;
+	height: 25px;
+	font-size: 15px;
+	
+}
+/* 按钮的div */
+#div_btn {
+	/* border: 1px red solid; */
+	width: 500px;
+	position: relative;
+	left: 520px;
+	right: 0;
+	margin-top: -40px;
+}
+#div_btn a{
+	text-decoration: none;
+	font-size: 20px;
+	/* display: block; */
+	width: 80px;
+	/* position: absolute; */
+	float: left;
+	color: #FFFFFF;
+	text-align: center;
+	margin-left: 10px;
+	/* border: 1px blue solid; */
+}
+/*查找按钮*/
+#a_search{
+	background-color: dodgerblue;
+}
+/*清空按钮*/
+#a_clear{
+	background-color: indianred;
+}
+/*增加按钮*/
+#a_add{
+	background-color: seagreen;
+}
+/*删除按钮*/
+#a_delete{
+	background-color: #ffdf2a;
+}
+/*修改按钮*/
+#a_update{
+	background-color: mediumslateblue;
+}
+/* 表格样式设置 */
+#div_table table{
+	width: 980px;
+	/*margin-top: 10px;*/
+	margin-left: 10px;
+	/*border: 1px red solid;*/
+	border-collapse: collapse;/* 在rd中无效,所以写在table中,边框线合并成一条 */
+}
+/* 表格的头部 */
+#div_table table thead{
+	background-color: dodgerblue;
+	color: white;
+	
+}
+/* 表格头部的边框设置 */
+#div_table table thead tr th{
+	border: 1px gray solid;
+}
+/* 底部栏 */
+#div_bottom{
+	margin-top: 10px;
+	/*border: 1px blue solid;*/
+	width: 980px;
+	margin-left: 10px;
+	/* height: 50px; */
+}
+/* 尾部页码显示 */
+#div_size{
+	/*border: 1px blue solid;*/
+	width: 300px;
+	margin-left: 10px;
+	/*margin-top: 10px;*/
+}
+/* 设置当前页码为红色 */
+#pageNum{
+	color: red;
+	font-weight: bold;
+}
+/* 底部翻页 */
+#div_nav{
+	/*border: 1px blue solid;*/
+	width: 180px;
+	/* float: left; */
+	position: relative;
+	margin-left: 800px;
+	margin-top: -25px;
+}
+/*翻页的a标签*/
+#div_nav a{
+	text-decoration: none;
+}
+/* 遮罩层的样式设置 */
+.black_overlay{
+	display: none;
+	position: absolute;
+	top: 0%;
+	left: 0%;
+	width: 100%;
+	height: 100%;
+	background-color: rgb(187,184,184);
+	z-index: 1001; /* 设置元素的堆叠顺序。 拥有更高堆叠顺序的元素总是会处于堆叠顺序较低的元素的前面。*/
+	-moz-opacity: 0.5;
+	opacity: 0.5;/* 透明度 */
+}
+
+/* 表格内容的设置 */
+table tbody tr td{
+	text-align: center;
+	line-height: 25px;
+	border:1px gray solid;
+}
+/* 表格内容设置为隔行换色,用了这个之后,鼠标移入移出则不能显示颜色 */
+/* table tbody tr:nth-child(odd){
+	background-color: gainsboro;
+}
+table tbody tr:nth-child(even){
+	background-color: whitesmoke;
+} */
+.tr_odd{
+	background-color: gainsboro;
+}
+/* 偶数行 */
+.tr_even{
+	background-color: whitesmoke;
+}
+/* 鼠标移入的颜色 */
+.tr_hover{
+	background: navajowhite;
+}
+/* 选中后的颜色 */
+.tr_ckColor{
+	background: #aaaaff;
+}
+/*增加div*/
+.white_content{
+	display: none;
+	position: absolute;
+	width: 400px;
+	height:550px;
+	border: 6px lightblue solid;
+	background-color: white;
+	z-index: 1002;
+	overflow: auto;
+}
+/*增加页面的样式设置*/
+#div_in input{
+width: 230px;
+height: 30px;
+border-radius: 4px;
+border:1px solid gray;
+text-indent: 2em;/* 不让文字顶格输入 */
+}
+#uname,#sname{
+background: url(../img/name.png)4px no-repeat;/* 插入图片不平铺 */
+}
+#email{
+background: url(../img/email.png)4px no-repeat;/* 插入图片不平铺 */
+}
+#div_in select{
+width: 230px;
+height: 30px;
+border-radius: 4px;
+border:1px solid gray;
+text-indent: 2em;/* 不让文字顶格输入 */
+background: url(../img/city.png)4px no-repeat;/* 插入图片不平铺 */
+}
+#pwd,#spwd{
+background: url(../img/pwd.png)4px no-repeat;/* 插入图片不平铺 */
+}
+
+#div_in span{
+font-size: 12px;
+color: red;
+/* margin-top: 20px; */
+text-align: left;/*覆盖掉之前的文本居中 */
+width:310px;
+height:25px;
+display:inline-block;/* 设置了这个元素，span会被认定为是块状元素，才可以设置width和height */
+margin-left:60px;
+/*background-color:gray;*/
+}
