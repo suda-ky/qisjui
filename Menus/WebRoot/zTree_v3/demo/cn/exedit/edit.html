@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<HTML>
+<HEAD>
+	<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+	<link rel="stylesheet" href="../../../css/zTreeStyle/zTreeStyle.css" type="text/css">
+	<script type="text/javascript" src="../../../js/jquery-1.4.4.min.js"></script>
+	<script type="text/javascript" src="../../../js/jquery.ztree.core.js"></script>
+	<script type="text/javascript" src="../../../js/jquery.ztree.excheck.js"></script>
+	<script type="text/javascript" src="../../../js/jquery.ztree.exedit.js"></script>
+	<SCRIPT type="text/javascript">
+		<!--
+		var setting = {
+			edit: {
+				enable: true
+			},
+			data: {
+				simpleData: {
+					enable: true
+				}
+			},
+			callback: {
+				beforeDrag: beforeDrag
+			}
+		};
+
+		var zNodes =[
+			{ id:6, pId:0, name:"所有商品分类", open:true},
+			{ id:1, pId:6, name:"图书，童书", open:true},
+			{ id:11, pId:1, name:"童书"},
+			{ id:12, pId:1, name:"教育"},
+			{ id:13, pId:1, name:"文艺"},
+			{ id:14, pId:1, name:"生活"},
+			{ id:15, pId:1, name:"科技"},
+			{ id:2, pId:6, name:"创意文具，拍卖", open:true},
+			{ id:21, pId:2, name:"学生文具"},
+			{ id:22, pId:2, name:"画具/画材"},
+			{ id:23, pId:2, name:"文房用品"},
+			{ id:24, pId:2, name:"中国书画拍卖"},
+			{ id:25, pId:2, name:"西画雕塑拍卖"},
+			{ id:3, pId:6, name:"手机，数码，电脑办公", open:true},
+			{ id:31, pId:3, name:"手机配件"},
+			{ id:32, pId:3, name:"视听影音"},
+			{ id:33, pId:3, name:"摄像摄影"},
+			{ id:34, pId:3, name:"外设产品"},
+			{ id:35, pId:3, name:"办公设备"},
+			{ id:4, pId:6, name:"当当礼品卡", open:true},
+			{ id:41, pId:4, name:"V卡"},
+			{ id:42, pId:4, name:"经典卡"},
+			{ id:43, pId:4, name:"主题卡"},
+			{ id:44, pId:4, name:"节日卡"}
+		];
+
+		function beforeDrag(treeId, treeNodes) {
+			return false;
+		}
+		
+		function setEdit() {
+			var zTree = $.fn.zTree.getZTreeObj("treeDemo"),
+			remove = $("#remove").attr("checked"),
+			rename = $("#rename").attr("checked"),
+			removeTitle = $.trim($("#removeTitle").get(0).value),
+			renameTitle = $.trim($("#renameTitle").get(0).value);
+			zTree.setting.edit.showRemoveBtn = remove;
+			zTree.setting.edit.showRenameBtn = rename;
+			zTree.setting.edit.removeTitle = removeTitle;
+			zTree.setting.edit.renameTitle = renameTitle;
+			showCode(['setting.edit.showRemoveBtn = ' + remove, 'setting.edit.showRenameBtn = ' + rename,
+				'setting.edit.removeTitle = "' + removeTitle +'"', 'setting.edit.renameTitle = "' + renameTitle + '"']);
+		}
+		function showCode(str) {
+			var code = $("#code");
+			code.empty();
+			for (var i=0, l=str.length; i<l; i++) {
+				code.append("<li>"+str[i]+"</li>");
+			}
+		}
+		
+		$(document).ready(function(){
+			$.fn.zTree.init($("#treeDemo"), setting, zNodes);
+			setEdit();
+			$("#remove").bind("change", setEdit);
+			$("#rename").bind("change", setEdit);
+			$("#removeTitle").bind("propertychange", setEdit)
+			.bind("input", setEdit);
+			$("#renameTitle").bind("propertychange", setEdit)
+			.bind("input", setEdit);
+		});
+		//-->
+	</SCRIPT>
+</HEAD>
+
+<BODY>
+<div class="content_wrap">
+	<div class="zTreeDemoBackground left">
+		<ul id="treeDemo" class="ztree"></ul>
+	</div>
+</div>
+</BODY>
+</HTML>
